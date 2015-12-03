@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> ToDo List</title>
+  <link rel="stylesheet" href="assets/style/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,vietnamese,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="todo-holder">
+      <div class="todo-box">
+        <div class="todo-header">
+         <div class="list-name">ToDo List</div>
+         <div class="add-task-label">Add new...</div>
+         <div class="add-task-input display">
+           <input type="text" id="add-task-input" placeholder="Task Name"/>
+           <div class="add-task-save">Save</div>
+         </div>
+        </div>
+        <div class="todo-list">
+          <div class="todo-footer display">
+          </div>
+        </div>
+      </div>
+          
+      <div class='main-box'></div>
+
+      <div class='archived-box'>
+        <div class='archived-header'>
+          <div class='archived-name'>Archive List</div>
+          <div class='search-task-label'>Search for Task...</div>
+          <div class='search-task-input display'>
+            <input type='text' id='search-task-input' placeholder="It doesn't work yet :)" />
+            <div class='search-task-search'>Search</div>
+          </div>
+        </div>
+        <div class='archived-list'>
+          <div class='archived-footer display'>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<script type="text/template" id='li_template'>
+  <div class="li-view">
+    <input class='li-check' type="checkbox" <%= status ? 'checked="checked"' : '' %> />  
+    <label <%= status ? 'class="li-label text-decor"' : 'class="li-label"' %> ><%- title %></label>
+    <input type="text" class="li-input display" />
+    <div class='li-help display'><div class="li-edit">Edit</div><div class="li-delete">Del</div></div>
+    <div class='li-in-todo display'>in ToDo...</div>
+  </div>
+</script>
+<script type='text/template' id='todo_footer_template'>
+  <span class="todo-count"><%- left %> Item(s) Left</span>
+  <span class="todos-delete"><%- done %> Item(s) to Archive</span>
+</script>
+<script type='text/template' id='archived_footer_template'>
+  <span class="archived-del-all">Delete All (<%- count %>)</span>
+  <span class="todos-delete">Delete <%- done %> Selected</span>
+</script>
+<script src="assets/js/n_moduels/jquery-1.11.3.js"></script>
+<script src="assets/js/n_moduels/underscore.js"></script>
+<script src="assets/js/n_moduels/backbone.js"></script>
+<script src="assets/js/n_moduels/localStorage_adapter.js"></script>
+<script src='assets/js/todoList.js'></script>
+<script src='assets/js/archivedList.js'></script>
+</body>
+
+</html>

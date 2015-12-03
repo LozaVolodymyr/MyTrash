@@ -1,0 +1,133 @@
+body {
+	 
+
+
+}
+
+.HeliosBold {
+	font-family: "HeliosBold";
+	font-size: 5em;
+}
+
+.MagistralC {
+	font-family: MagistralC;
+	font-size: 5em;
+}
+
+
+ /*sidebar*/
+
+ .column {
+	min-height: 0px;
+	float: left;
+	text-align: left;
+	width: 0px;
+	padding: 0em;
+	
+
+}
+
+.column_login {
+	float: right;
+	/*padding: 0 2em;*/
+	position: relative;
+	text-align: right;
+}
+.main {
+	max-width: 1000px;
+	margin: 0 auto;
+	 overflow: hidden;
+	 height: 30px;
+}
+.codrops-top{
+	position: fixed;
+	margin: 0 auto;
+}
+
+.title-top{
+	position: relative;
+	float: right;
+	text-transform: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.title-top-span {
+	font-weight: normal;
+
+}
+
+.main-content{
+	width: 1000px;
+	height: 500px;
+	/*background: rgba(255,165,0,.3);*/
+	margin: 0 auto;
+	/*border: 2px solid coral;*/
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 355px) {
+   
+   .column_login {
+		display: none;
+	}
+}
+
+
+@font-face {
+    font-family: "MagistralC";
+    src: url("../fonts/MagistralC/MagistralC.eot");
+    src: url("../fonts/MagistralC/MagistralC.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MagistralC/MagistralC.woff") format("woff"),
+    url("../fonts/MagistralC/MagistralC.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadPro-Regular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadPro-Regular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProRegular/MyriadPro-Regular.woff") format("woff"),
+    url("../fonts/MyriadProRegular/MyriadPro-Regular.ttf") format("truetype");
+    font-style: bold;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "HeliosC";
+    src: url("../fonts/HeliosC/heliosc-bold.eot");
+    src: url("../fonts/HeliosC/heliosc-bold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/HeliosC/heliosc-bold.woff") format("woff"),
+    url("../fonts/HeliosC/heliosc-bold.ttf") format("truetype");
+    font-style: bold;
+    font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MyriadPro-Bold';
+	src: url('../fonts/MyriadPro-Bold.eot');
+	src: local('☺'), url('../fonts/MyriadPro-Bold.woff') format('woff'), url('../fonts/MyriadPro-Bold.ttf') format('truetype'), url('../fonts/MyriadPro-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Conv1';
+	src: url('fonts/MyriadPro-Bold.eot');
+	src: local('☺'), url('fonts/MyriadPro-Bold.woff') format('woff'), url('fonts/MyriadPro-Bold.ttf') format('truetype'), url('fonts/MyriadPro-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'HeliosBold';
+	src: url('fonts/HeliosBold.eot');
+	src: local('☺'), url('fonts/HeliosBold.woff') format('woff'), url('fonts/HeliosBold.ttf') format('truetype'), url('fonts/HeliosBold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

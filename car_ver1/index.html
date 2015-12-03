@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     <article>
+      <div class="container">
+        <div role="tabpanel">
+        
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#clients" aria-controls="client" role="tab" data-toggle="tab">Client</a></li>
+            <li role="presentation"><a href="#car" aria-controls="car" role="tab" data-toggle="tab">Car</a></li>
+            <li role="presentation"><a href="#order" aria-controls="order" role="tab" data-toggle="tab">Order</a></li>
+            <li role="presentation"><a href="#orderlist" aria-controls="order" role="tab" data-toggle="tab">Order List</a></li>
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <div id="tab-hot-carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#tab-hot-carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#tab-hot-carousel" data-slide-to="1"></li>
+                  <li data-target="#tab-hot-carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="img/car1.jpg" alt="...">
+                    <div class="carousel-caption">
+                      New Engine
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="img/car2.jpg" alt="...">
+                    <div class="carousel-caption">
+                      New Design
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#tab-hot-carousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#tab-hot-carousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div><!-- /#hot -->
+
+            <div role="tabpanel" class="tab-pane" id="clients">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-3 col-lg-3">
+
+              <form action="ajax.php?action=addusers" method="POST" id="user_form">
+              <ul class="form-style-1">
+                  <li><label>Full Name <span class="required">*</span></label><input type="text" name="firstname" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="lastname" class="field-divided" placeholder="Last" /></li>
+                  <li>
+                      <label>Email <span class="required">*</span></label>
+                      <input type="email" name="email" class="field-long" />
+                  </li>
+
+                  <li>
+                      <label>Status</label>
+                      <select name="users_f" class="field-select">
+                      <option value="Advertise">Have Dicsount</option>
+                      <option value="Partnership">NoNe</option>
+                     
+                      </select>
+                  </li>
+                  <li>
+                      <label>Your Message <span class="required">*</span></label>
+                      <textarea name="message" id="field5" class="field-long field-textarea"></textarea>
+                  </li>
+                  <li>
+                      <input type="submit" value="Add Client" />
+                  </li>
+              </ul>
+              </form>                  
+                  </div>
+                  <div class="col-sm-9 col-lg-9">
+                  Search for Name
+                  <form action="" id="client-search">
+                    <input type="text" name="search" id="">
+                    <select name="select_client" id="">
+                       <option value="name">Name</option>
+                        <option value="email">Email</option>
+                                  
+                    </select>
+                  </form>
+                     <table id="result">
+                      <tr>
+                        <td class="table-back">Email</td>
+                        <td class="table-back">Name</td>
+                        <td class="table-back">LastName</td>
+                        <td class="table-back">Message</td>
+                        <td class="table-back">Delete</td>
+                        <td class="table-back">Edit</td>
+                      </tr>
+                  </table>  
+                  <!-- Button trigger modal -->
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Edit users</h4>
+                            </div>
+                            <div class="modal-body">
+                               <form action="ajax.php?action=addusers" method="POST" id="user_form">
+                              <ul class="form-style-1">
+                                  <li><label>Full Name <span class="required">*</span></label><input type="text" name="firstname" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="lastname" class="field-divided" placeholder="Last" /></li>
+                                  <li>
+                                      <label>Email <span class="required">*</span></label>
+                                      <input type="email" name="email" class="field-long" />
+                                  </li>
+
+                                  <li>
+                                      <label>Status</label>
+                                      <select name="users_f" class="field-select">
+                                      <option value="Advertise">Have Dicsount</option>
+                                      <option value="Partnership">NoNe</option>
+                                     
+                                      </select>
+                                  </li>
+                                  <li>
+                                      <label>Discount <span class="required">*</span></label>
+                                      <select name="users_f" class="field-select">
+                                      <option value="Advertise">10%</option>
+                                      <option value="Partnership">20%</option>
+                                      <option value="General Question">30%</option>
+                                      <option value="General Question">40%</option>
+                                      <option value="General Question">50%</option>
+                                      </select>
+                                  </li>
+                                  <li>
+                                      <input type="submit" value="Submit" />
+                                  </li>
+                              </ul>
+                              </form> 
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                     
+                  </div>
+                </div>
+              </div>             
+            </div>
+            <div role="tabpanel" class="tab-pane" id="car">
+            <div class="container">
+              <div class="row ">
+                <div class="col-sm-3 col-lg-3">
+                  <form action="ajax.php?action=addcars" method="POST">
+              <ul class="form-style-1">
+                  <li>
+                      <label>Model <span class="field-divided">*</span></label>
+                      <input type="text" name="model" class="field-long" />
+                  </li>
+
+                  <li>
+                      <label>Engine</label>
+                      <select name="eng_type" class="field-select">
+                      <option value="Advertise">Diesel</option>
+                      <option value="Partnership">Gas</option>
+                      <option value="General Question"> Electric</option>
+                      </select>
+                  </li>
+                    <li>
+                      <label>Gear</label>
+                      <select name="gear_type" class="field-select">
+                      <option value="Advertise">Auto</option>
+                      <option value="Partnership">Mechanical</option>
+                      </select>
+                  </li>
+                  <li>
+                      <label>Price <span class="required">*</span></label>
+                      <input type="text" name="dayprice" class="field-long" />
+                  </li>
+                  <li>
+                      <label>Capacity <span class="required">*</span></label>
+                      <input type="text" name="capacity" class="field-long" />
+                  </li> 
+                 
+                  <li>
+                      <input type="submit" value="Submit" />
+                  </li>
+              </ul>
+              </form>   
+
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <table id="result_car">
+                      <tr>
+                        <td class="table-back">Model</td>
+                        <td class="table-back">Engine</td>
+                        <td class="table-back">Gear</td>
+                        <td class="table-back">Price</td>
+                        <td class="table-back">Capacity</td>
+                        <td class="table-back">Edit</td>
+                        <td class="table-back">Delete</td>
+                      </tr>
+                  </table>   
+                   
+                </div>
+              </div>
+            </div>            
+            </div>
+            <div role="tabpanel" class="tab-pane" id="order">
+            <div class="container">
+              <div class="row ">
+                <div class="col-sm-12 col-lg-12">
+                    <form action="ajax.php?action=addcars" method="POST">
+              <ul class="form-style-1">
+                  <li>
+                      <label>Model <span class="field-divided">*</span></label>
+                      <select name="gear_type" class="field-select">
+                      <option value="Advertise">Audi</option>
+                      <option value="Partnership">Mitsubishi</option>
+                      <option value="Partnership">Suziki</option>
+                      <option value="Partnership">Toyota</option>
+                      <option value="Partnership">Mazda</option>
+                      <option value="Partnership">Honda</option>
+                      <option value="Partnership">Mini</option>
+                      <option value="Partnership">Smart</option>
+                      <option value="Partnership">Pego</option>
+                      <option value="Partnership">Fiat</option>
+                      </select>
+                  </li>
+
+                  <li>
+                      <label>Engine</label>
+                      <select name="eng_type" class="field-select">
+                      <option value="Advertise">Diesel</option>
+                      <option value="Partnership">Gas</option>
+                      <option value="General Question"> Electric</option>
+                      </select>
+                  </li>
+                    <li>
+                      <label>Gear</label>
+                      <select name="gear_type" class="field-select">
+                      <option value="Advertise">Auto</option>
+                      <option value="Partnership">Mechanical</option>
+                      </select>
+                  </li>
+                  <li>
+                      <label>Price <span class="required">*</span></label>
+                        <input type="text"> 
+                  </li>
+                  <li>
+                      <label>Capacity <span class="required">*</span></label>
+                     <input type="checkbox" name="option1" value="a1" checked>3
+                     <input type="checkbox" name="option2" value="a2">5
+                   
+                  </li> 
+                  <li>
+                      <label>Date <span class="required">*</span></label>
+                     <input type="date" name="option1" value="a1" checked>
+                     <input type="date" name="option2" value="a2">
+                   
+                  </li> 
+                    
+                 
+                  <li>
+                      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8"> Search</button>
+                  </li>
+              </ul>
+              </form>   
+
+                </div>
+               
+              </div>
+            </div>
+            </div>
+
+          <div role="tabpanel" class="tab-pane" id="orderlist">
+            <div class="container">
+              <div class="row ">
+                <div class="col-sm-12 col-lg-12">
+                    <table id="result_order">
+                      <tr>
+                        <td class="table-back">Id</td>
+                        <td class="table-back">Start</td>
+                        <td class="table-back">End</td>
+                        <td class="table-back">Car</td>
+                        <td class="table-back">Price</td>
+                        <td class="table-back">Discount</td>
+                        <td class="table-back">Edit</td>
+                        <td class="table-back">Delete</td>
+                      </tr>
+                  </table>   
+
+                </div>
+               
+              </div>
+            </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </article>
+                <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">DELETE</h4>
+                            </div>
+                            <div class="modal-body">
+                           Car DELETE
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">DELETE</h4>
+                            </div>
+                            <div class="modal-body">
+                           User DELETE
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Edit cars</h4>
+                            </div>
+                            <div class="modal-body">
+                               <form action="ajax.php?action=addcars" method="POST">
+              <ul class="form-style-1">
+                  <li>
+                      <label>Model <span class="field-divided">*</span></label>
+                      <select name="gear_type" class="field-select">
+                      <option value="Advertise">Audi</option>
+                      <option value="Partnership">Mitsubishi</option>
+                      <option value="Partnership">Suziki</option>
+                      <option value="Partnership">Toyota</option>
+                      <option value="Partnership">Mazda</option>
+                      <option value="Partnership">Honda</option>
+                      <option value="Partnership">Mini</option>
+                      <option value="Partnership">Smart</option>
+                      <option value="Partnership">Pego</option>
+                      <option value="Partnership">Fiat</option>
+                      </select>
+                  </li>
+
+                  <li>
+                      <label>Engine</label>
+                      <select name="eng_type" class="field-select">
+                      <option value="Advertise">Diesel</option>
+                      <option value="Partnership">Gas</option>
+                      <option value="General Question"> Electric</option>
+                      </select>
+                  </li>
+                    <li>
+                      <label>Gear</label>
+                      <select name="gear_type" class="field-select">
+                      <option value="Advertise">Auto</option>
+                      <option value="Partnership">Mechanical</option>
+                      </select>
+                  </li>
+                  <li>
+                      <label>Price <span class="required">*</span></label>
+                        <input type="text"> 
+                  </li>
+                  <li>
+                      <label>Capacity <span class="required">*</span></label>
+                     <input type="checkbox" name="option1" value="a1" checked>3
+                     <input type="checkbox" name="option2" value="a2">5
+                   
+                  </li> 
+                  
+                
+              </ul>
+              </form>   
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                       <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Order</h4>
+                            </div>
+                            <div class="modal-body">
+                               <form action="ajax.php?action=addcars" method="POST">
+              <ul class="form-style-1">
+                  
+                   <table class="table table-bordered form-style-9">
+                      <tr>
+                        <td class="table-back">Model</td>
+                        <td class="table-back">Engine</td>
+                        <td class="table-back">Gear</td>
+                        <td class="table-back">Price</td>
+                        <td class="table-back">Capacity</td>
+                        <td class="table-back">Date Start</td>
+                        <td class="table-back">Date End</td>
+                      
+                      </tr>
+                        <td class="table-back">Audi</td>
+                        <td class="table-back">Gas</td>
+                        <td class="table-back">Auto</td>
+                        <td class="table-back">110</td>
+                        <td class="table-back">5</td>
+                        <td class="table-back">25.06.2015</td>
+                        <td class="table-back">27.06.2015</td>
+                        
+                  </table>  
+                  
+                  
+                
+              </ul>
+              </form>   
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+
+
+
+
+
+</html>

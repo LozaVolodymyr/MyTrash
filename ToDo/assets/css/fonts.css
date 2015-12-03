@@ -1,0 +1,58 @@
+
+@font-face {
+    font-family: "HeliosBold";
+    src: url("../fonts/HeliosBold/HeliosBold.eot");
+    src: url("../fonts/HeliosBold/HeliosBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/HeliosBold/HeliosBold.woff") format("woff"),
+    url("../fonts/HeliosBold/HeliosBold.ttf") format("truetype");
+    font-style: bold;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MagistralC";
+    src: url("../fonts/MagistralC/MagistralC.eot");
+    src: url("../fonts/MagistralC/MagistralC.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MagistralC/MagistralC.woff") format("woff"),
+    url("../fonts/MagistralC/MagistralC.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadPro-Regular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadPro-Regular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProRegular/MyriadPro-Regular.woff") format("woff"),
+    url("../fonts/MyriadProRegular/MyriadPro-Regular.ttf") format("truetype");
+    font-style: bold;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "HeliosC";
+    src: url("../fonts/HeliosC/heliosc-bold.eot");
+    src: url("../fonts/HeliosC/heliosc-bold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/HeliosC/heliosc-bold.woff") format("woff"),
+    url("../fonts/HeliosC/heliosc-bold.ttf") format("truetype");
+    font-style: bold;
+    font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MyriadPro-Bold';
+	src: url('../fonts/MyriadPro-Bold.eot');
+	src: local('☺'), url('../fonts/MyriadPro-Bold.woff') format('woff'), url('../fonts/MyriadPro-Bold.ttf') format('truetype'), url('../fonts/MyriadPro-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Conv1';
+	src: url('fonts/MyriadPro-Bold.eot');
+	src: local('☺'), url('fonts/MyriadPro-Bold.woff') format('woff'), url('fonts/MyriadPro-Bold.ttf') format('truetype'), url('fonts/MyriadPro-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
